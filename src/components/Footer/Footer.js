@@ -184,6 +184,10 @@ const MainNavArea = styled.div`
   gap: 32px 85px;
   padding: 32px 0 48px;
   text-align: center;
+
+  @media ${QUERIES.tabletAndUp} {
+    text-align: left;
+  }
 `;
 
 const MainNavHeading = styled.h2`
