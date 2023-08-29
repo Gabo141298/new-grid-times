@@ -33,16 +33,12 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
-        <LeftSide>
-          <LeftSideButtons />
-        </LeftSide>
+        <LeftSideButtons />
         <Logo />
-        <RightSide>
-          <SubscribeWrapper>
-            <Button>Subscribe</Button>
-            <Link href="/">Already a subscriber?</Link>
-          </SubscribeWrapper>
-        </RightSide>
+        <SubscribeWrapper>
+          <Button>Subscribe</Button>
+          <Link href="/">Already a subscriber?</Link>
+        </SubscribeWrapper>
       </MainHeader>
     </header>
   );
@@ -84,27 +80,10 @@ const MainHeader = styled(MaxWidthWrapper)`
   margin-bottom: 48px;
 
   @media ${QUERIES.laptopAndUp} {
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: flex-start;
   }
-`;
-
-const Side = styled.div`
-  flex: 1;
-  display: none;
-
-  @media ${QUERIES.laptopAndUp} {
-    display: flex;
-  }
-`;
-
-const LeftSide = styled(Side)`
-  flex: 1;
-`;
-
-const RightSide = styled(Side)`
-  flex: 1;
-  justify-content: flex-end;
-  align-self: flex-end;
 `;
 
 const SubscribeWrapper = styled.div`
@@ -112,6 +91,8 @@ const SubscribeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  justify-self: flex-end;
+  align-self: flex-end;
 `;
 
 const Link = styled.a`
